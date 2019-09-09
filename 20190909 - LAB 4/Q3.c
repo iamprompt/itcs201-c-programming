@@ -1,14 +1,17 @@
 #include <stdio.h>
+#include <math.h>
 
 int main()
 {
     int n, m, p, result;
 
-    scanf("%d", &n, &m);
+    scanf("%d %d", &n, &m);
 
-for (m = 0; m < count; i++)
-{
-    /* code */
-}
+    result = 0;
+    for (p = 0; p <= m; p++)
+    {
+        result = result + (n * pow(2,p));
+    }
 
+    printf("%d", result);
 }
