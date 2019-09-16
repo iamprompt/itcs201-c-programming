@@ -6,16 +6,12 @@ int main()
     scanf("%d", &n);
     int m = 1, a = 1;
 
-    do
+    while (m != n)
     {
         a = a * m;
-        if (m == n)
-        {
-            break;
-        }
-
         m = m + 1;
-    } while (m != n);
+        printf("a = %d m = %d\n", a, m);
+    }
 
     printf("%d", a);
 }
