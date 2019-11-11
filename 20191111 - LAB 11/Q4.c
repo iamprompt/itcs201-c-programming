@@ -21,7 +21,10 @@ int compute_gcd(int index, int n1, int n2)
 int main()
 {
     int n, gcd;
-    scanf("%d", &n);
+    do
+    {
+        scanf("%d", &n);
+    } while (n < 2);
 
     int numarr[n];
     for (int i = 0; i < n; i++)
