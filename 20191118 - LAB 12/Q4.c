@@ -24,9 +24,22 @@ int main()
     sort(arr1, n);
     int its = intersect(arr1, arr2, n, out);
 
-    for (int i = 0; i < its; i++)
+    if (its > 0)
     {
-        printf("%d ", out[i]);
+        for (int i = 0; i < its; i++)
+        {
+            printf("%d", out[i]);
+            if (i < its - 1)
+            {
+                printf(" ");
+            }
+            
+        }
+        printf("\n");
+    }
+    else
+    {
+        printf("No intersect");
     }
 
     return 0;
