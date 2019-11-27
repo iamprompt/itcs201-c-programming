@@ -10,28 +10,33 @@ int main()
 
     // scanf("%[^\n]s", in_str);
     fgets(in_str, N, stdin);
+    char *pos;
+    if ((pos = strchr(in_str, '\n')) != NULL)
+        *pos = '\0';
 
-    for (int i = 0; i < N; i++)
+    while (in_str[i] != '\0')
     {
-        if (in_str[i] == '\n')
+        char character = in_str[i];
+        //printf("%d %c\n", i, character);
+        if ((character >= 'a' && character <= 'z') || (character >= 'A' && character <= 'Z') || (character >= '0' && character <= '9') || character == ' ')
         {
-            break;
-        }
-
-        printf("%c\n", in_str[i]);
-        if ((in_str[i] >= 'a' && in_str[i] <= 'z') || (in_str[i] >= 'A' && in_str[i] <= 'Z') || (in_str[i] >= '0' && in_str[i] <= '9') || in_str[i] == ' ' || in_str[i] = '\n')
-        {
-            printf("Heyyy %c\n", in_str[i]);
+            //printf("Heyyy %c\n", in_str[i]);
         }
         else
         {
-            *(in_str + i) = '\0';
+            int j = i;
+            while (in_str[j] != '\0')
+            {
+                in_str[j] = in_str[j + 1];
+                j++;
+            }
             rsym++;
+            i--;
         }
+        i++;
     }
 
-    printf("Removed %d\n", rsym);
-    printf("%s\n", in_str);
+    printf("%d %s\n", rsym, in_str);
 
     return 0;
 }
